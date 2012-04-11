@@ -1,0 +1,210 @@
+html, body {
+		-moz-user-select: none;
+		margin: 0;
+		padding: 0;
+	}
+
+
+	#actions .inQueue {
+		background: -moz-linear-gradient(#FDFDFD, #ff0000) repeat scroll 0 0 #EEEEEE;
+	}
+
+
+
+		body, #grid {
+			overflow: hidden;
+			position: relative;
+			margin: 0 auto;
+		}
+
+		#grid {
+			overflow: hidden;
+			position: relative;
+			margin: 0 auto;
+			width: 320px;
+			height: 450px;
+
+		}
+		#fight .ui-content {
+			padding: 0;
+			position: relative;
+		}
+
+		#grid img {
+			position: absolute;
+			top: 0;
+			margin: 0;
+			width: 100%;
+			height: 100%;
+			left: 0;
+			z-index: 1;
+		}
+		#grid a.panel {
+			float: left;
+			width: 33.3%;
+			height: 33.3%;
+			display: inline-block;
+			text-align: center;
+			text-indent: -999em;
+			/*background-color: #eee;*/
+			-moz-user-select: none;
+			user-select: none;
+            -moz-touch-callout: none;
+            touch-callout: none;
+            -moz-user-drag: none;
+            user-drag: none;
+            -moz-tap-highlight-color: rgba(0,0,0,0);
+            tap-highlight-color: rgba(0,0,0,0);
+            z-index: 9999;
+            color: #000;
+            position: relative;
+
+            -webkit-box-shadow: inset 0 0 0 1px rgba(219,219,219,0.51);
+			-moz-box-shadow: inset 0 0 0 1px rgba(219,219,219,0.51);
+			box-shadow: inset 0 0 0 1px rgba(219,219,219,0.51);
+		}
+
+		#grid a.panel:active {
+			background-color: rgba(219,0,0,0.52);
+			color: #fff;
+		}
+
+		/*user vs opp actions*/
+		#grid a.panel.hit {
+			background: url("../img/hit.png") center center no-repeat transparent;
+		}
+		#grid a.panel.block {
+			background: url("../img/block.png") center center no-repeat transparent;
+		}
+
+		/*opp vs user actions*/
+		#grid a.panel.hited {
+			background: url("../img/hited.png") center center no-repeat transparent;
+		}
+		#grid a.panel.blocked {
+			background: url("../img/blocked.png") center center no-repeat transparent;
+		}
+
+		
+		#grid a.panel.blocking {
+			background: none;
+			background-color: rgba(0,0,255,0.25);
+		}
+		#combo {
+			position: absolute;
+			width: 100%;
+			text-align: center;
+			top: 40%;
+			color: blue;
+			font-weight: bold;
+			text-shadow: 2px 2px 0px #FFFFFF, -2px -2px 0px #FFFFFF, 2px -2px 0px #FFFFFF, -2px 2px 0px #FFFFFF;
+			font-size: 1.5em;
+			z-index: 999999;
+		}
+		p#output {
+			width: 100%;
+			font-size: 10px;
+			font-family: monospace;
+		}
+
+		#timer {
+			z-index: 999999;
+			position: absolute;
+			top: 10px;
+			right: 10px;
+			width: 15px;
+			height: 15px;
+		}
+		#userStats, #oppStats {
+			z-index: 99999;
+			position: absolute;			
+			width: 100%;
+		}
+		#oppStats {bottom: 50px;}
+		#userStats {top: 0;}
+
+		#userStats .HP, #oppStats .HP, #userStats .AP{
+			position: relative;
+			bottom: 0;
+			width: 100%;
+			border: 1px solid transparent;
+		}
+		#userStats .HP .bar, #oppStats .HP .bar, #userStats .AP .bar {
+			width: 100%;
+			height: 10px;
+		}
+		.HP .bar {background-color: green;}
+		.AP .bar {background-color: orange;}
+
+
+/*main menu page*/
+
+#menu .username {
+	color: green;
+	font-weight: bold;
+}
+
+
+/*Feedback overlay*/
+
+#feedback {
+	background-image: none;
+	background: rgba(0,0,0,0.7);
+}
+#feedback .msg {
+	margin: 20px;
+}
+#feedback .done {
+	width: 100px;
+	margin: 0 auto;
+}
+
+
+
+/*User profile page*/
+#userProfile #stats span, #userProfile #meta span {
+	font-weight: bold;
+}
+#userProfile #stats .hp, #userProfile #stats .ap, #userProfile #stats .level, 
+#userProfile #meta .online, #userProfile #meta .inQueue, #userProfile #meta .inFight {
+ 	margin-right :10px;
+ 	font-weight: normal;
+}
+
+#userProfile #meta .true {
+	color: green;
+}
+
+#userProfile #meta .false {
+	color: #aaa;
+}
+
+
+
+
+/*ONline player list*/
+
+#online a.online-true {
+	color: green;
+}
+#online a.online-false {
+	color: #ccc;
+	cursor: default;
+}
+
+
+
+
+span.opponent {
+	font-weight: bold;
+	color: green;
+	margin: 0 5px;
+}
+
+
+Timer retina resize:
+
+#timer canvas.retina {
+	width: 15px;
+	height: 15px;
+}

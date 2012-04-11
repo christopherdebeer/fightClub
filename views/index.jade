@@ -1,0 +1,178 @@
+#signIn(data-role="page")
+	div(data-role="header")
+		h1 #{title} Sign In
+	div(data-role="content")
+		form(action="", method="")
+			input(type="text", name="username", id="username", value="", placeholder="Username")
+			br
+			input(type="password", name="password", id="password", value="", placeholder="Password")
+			input(type="password", name="password", id="password2", value="", placeholder="Confirm Password")
+			br
+			label#signup(for="signupC")
+				input#signupC(type="checkbox", name="signup")
+				| Sign Up
+			input(type="submit", value="Login")
+
+
+
+
+
+#menu(data-role="page")
+	div(data-role="header")
+		h1= title
+		a(href="#profile", data-role="button") Profile
+	div(data-role="content")
+		p Welcome to fightClub,
+			| &nbsp;
+			span.username User
+			| .
+
+		#actions
+			a.practice(href="#practice", data-role="button") Practice
+			a.joinQueue(href="#", data-role="button", data-icon="star") Join fight Queue
+		br
+		br
+		h2 Fight Club Users
+		ul#online(data-role="listview", data-inset="true", data-filter="true")
+
+
+
+
+
+#practice(data-role="page", data-add-back-btn="true")
+	div(data-role="header")
+		a(data-role="button", href="#menu") Back
+		h1 Practice
+	div(data-role="content")
+		p You can practice against the computer to get the hang of the game, or practice your newly learned/unlocked combos, before metering them out against human opponents.
+		br
+		a.bot#blockOnly(href="#", data-role="button") Blocking bot
+		a.bot#attackOnly(href="#", data-role="button") Attacking bot
+		a.bot#attackAndBlock(href="#", data-role="button") All Rounder
+
+
+
+
+#fight(data-role="page")
+	div(data-role="content")
+		#oppStats
+			.HP
+				.bar
+		#timer
+		#combo
+		#grid
+			img(src="/img/avatar.png", alt="")
+			a.panel(href="#", data-combo-id="tL") 0
+			a.panel(href="#", data-combo-id="tM") 1
+			a.panel(href="#", data-combo-id="tR") 2
+			a.panel(href="#", data-combo-id="mL") 3
+			a.panel(href="#", data-combo-id="mM") 4
+			a.panel(href="#", data-combo-id="mR") 5
+			a.panel(href="#", data-combo-id="bL") 6
+			a.panel(href="#", data-combo-id="bM") 7
+			a.panel(href="#", data-combo-id="bR") 8
+		#userStats
+			.HP
+				.bar
+			.AP
+				.bar
+
+
+
+#fightOver(data-role="page", data-transition="pop")
+	div(data-role="header")
+		a(data-role="button", href="#menu") Back
+		h1 Fight Over
+	div(data-role="content")
+		p The match is over
+		p.result
+
+
+
+
+#challenge(data-rel="dialog",data-role="page", data-transition="pop")
+	div(data-role="header")
+		h1 #{title}
+	div(data-role="content")
+		h2 You've been challenged.
+		p 
+			span.opponent xxxx
+			| has challenged you to a fight.
+		div(data-role="controlgroup", data-type="horizontal")
+			a.decline(href="#", data-role="button", data-rel="back") Decline
+			a.accept(href="#", data-role="button") Accept
+
+
+
+
+#challenging(data-rel="dialog",data-role="page", data-transition="pop")
+	div(data-role="header")
+		h1 #{title}
+	div(data-role="content")
+		h2 Challenging 
+		p You are challenging, 
+			span.opponent
+			| to a fight.
+		p response: 
+			span.response
+
+
+
+
+#userProfile(data-role="page", data-transition="slide")
+	div(data-role="header")
+		a(data-role="button", href="#menu", data-rel="back") Back
+		h1 #{title}
+	div(data-role="content")
+		h2.username User
+		p#stats
+			span HP: 
+			span.hp
+			span AP:
+			span.ap
+			span Lvl:
+			span.level
+		p#meta
+			span Online: 
+			span.online
+			span In Queue:
+			span.inQueue
+			span In Fight:
+			span.inFight
+		div
+			a.challenge(data-role="button", href="#challenging", data-rel="dialog", data-transition="pop") Challenge
+
+
+
+
+
+#profile(data-role="page", data-transition="slide")
+	div(data-role="header")
+		a(data-role="button", href="#menu", data-rel="back") Back
+		h1 Your Profile
+	div(data-role="content")
+		h2.username User
+		p#stats2
+			span HP: 
+			span.hp
+			span AP:
+			span.ap
+			span Lvl:
+			span.level
+
+
+#feedback(data-role="page", data-rel="dialog", data-transition="pop")
+	div(data-role="header")
+		h1 #{title}
+	div(data-role="content")
+		.msg
+		a.done(data-role="button", data-rel="back") Ok
+
+script(type="text/javascript", src="/js/hammer.js/hammer.js")
+script(type="text/javascript", src="/js/underscore-min.js")
+script(type="text/javascript", src="/js/hammer.js/jquery.hammer.js")
+script(type="text/javascript", src="/socket.io/socket.io.js")
+script(type="text/javascript", src="/js/CCCCombo.js")
+script(type="text/javascript", src="/js/pacman.js")
+script(type="text/javascript", src="/js/fight.js")
+script(type="text/javascript", src="/js/fight-bots.js")
